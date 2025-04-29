@@ -1,0 +1,28 @@
+.muirtl-46bh2p-MuiCardContent-root {
+  padding: 12px !important;
+  padding-bottom: 6px !important;
+}
+
+.MuiCardActions-root {
+  padding: 0px 4px 4px 4px !important;
+}
+
+.error-style {
+  margin-top: "0rem !important";
+  position: "relative";
+  left: 10;
+  color: #d32f2f;
+}
+
+.gridRow {
+  width: "100%";
+  height: "100%";
+  display: "flex";
+  flex-wrap: "wrap";
+  justify-content: "space-around";
+}
+
+input[type="file"] {
+  display: none;
+  color: #eeeefc;
+}

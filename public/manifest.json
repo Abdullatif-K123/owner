@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "سفرة بنقرة - لوحة التحكم",
+  "short_name": "سفرة - لوحة التحكم",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "transparent",
+  "description": "لوحة التحكم الخاصة بالشركات سفرة بنقرة",
+  "icons": [
+    {
+      "src": "images/logo.png",
+      "purpose": "any",
+      "background_color": "#fff",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ]
+}

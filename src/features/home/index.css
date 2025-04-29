@@ -1,0 +1,4 @@
+.MuiDataGrid-root .MuiDataGrid-cell {
+  border-bottom: none !important;
+  background-color: red !important;
+}
