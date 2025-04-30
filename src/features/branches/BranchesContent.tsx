@@ -17,7 +17,7 @@ const BranchesContent = () => {
       <Stack sx={{ display: "relative" }} spacing={2}>
         <BranchFilter />
         <BranchesTable setAddOpen={setAddOpen} setDeleteOpen={setDeleteOpen} />
-        {!isOwner && (
+        {isOwner && (
           <>
             <AddBranch addOpen={addOpen} setAddOpen={setAddOpen} />
             <BranchDelete
