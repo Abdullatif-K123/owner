@@ -67,6 +67,7 @@ const AddBusses: FC<Props> = ({ setAddOpen, addOpen }) => {
   useEffect(() => {
     setId(searchParams.get("id") ?? "");
   }, [searchParams]);
+
   const getQuery = bussesQuery.useDetailsQuery(id);
 
   const handleClickOpen = () => {
@@ -74,6 +75,7 @@ const AddBusses: FC<Props> = ({ setAddOpen, addOpen }) => {
   };
 
   const { data, status } = bussesQuery.useSelectBranchQuery();
+
   const branches = status === "success" ? data : citiesDefault;
 
   const form = useForm<AddBussesType>({
@@ -103,6 +105,7 @@ const AddBusses: FC<Props> = ({ setAddOpen, addOpen }) => {
   const [modelDefault, setModelDefault] = useState("");
   useEffect(() => {
     const data = getQuery ? getQuery.data ?? null : null;
+    console.log(data);
     if (data !== undefined && data !== null && !flag) {
       setFlag(true);
       Object.entries(data as AddBussesType).forEach(([name, value]) => {

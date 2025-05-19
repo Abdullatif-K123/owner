@@ -43,7 +43,7 @@ const ReservationsTable = () => {
   const { reservationsQuery } = useReservationsContext();
   // const pageNumber = usePageNumberSearchParam();
   const page: TourCustomer[] | undefined = reservationsQuery.data?.pages[0]
-    ?.data as TourCustomer[] | undefined;
+    ?.data?.data as TourCustomer[] | undefined;
   const isSuccess = reservationsQuery.isSuccess;
   const isLoading = reservationsQuery.isLoading;
   const isEmpty = isSuccess && !page?.length;

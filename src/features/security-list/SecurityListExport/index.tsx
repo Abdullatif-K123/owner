@@ -37,7 +37,7 @@ const SecurityListPage = () => {
   const { data } = branchQueries.useGetLogoQuery(branchId ?? "");
   useEffect(() => {
     if (data) {
-      setImagePreview(`https://file.dev.safra-binakra.com/wwwroot/${data}`);
+      setImagePreview(`https://clickonline-sy.com/${data}`);
       setTimeout(() => {
         window.print();
       }, 1000);

@@ -100,7 +100,7 @@ let API_ROUTES = {
     RECIEVED_ACTION: "ActionRecievedToursSandook",
     RECIEVE_TOURS: "FinishedTours",
     COMPANY_ALL: "GetFiannce",
-    COMPANY_ALL_CASH: "GetFiannceCash",
+    COMPANY_ALL_CASH: "GetFinanceCash",
     COMPANY_ACTION: "OwnerConfirm",
     COMPANY_DETAILS: "GetTourFiannce",
     REMOVE_SANDOOK_TOOR: "RemoveSandookTour",

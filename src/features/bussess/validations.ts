@@ -23,7 +23,7 @@ export const filesUploadschema = yup.object().shape({
 
 export const addBussesSchema = yup.object().shape({
   id: yup.string(), // Required for adding new buses
-  name: yup.string().required("الحقل مطلوب"), // Required field with validation message
+  name: yup.string().required("الحقل مطلوب"),  
   number: yup.string().required("الحقل مطلوب"), // Required field with validation message
   modelId: yup.string().required("الحقل مطلوب"), // Required field with validation message
   busPhotoId: yup.string().required("الحقل مطلوب").test(

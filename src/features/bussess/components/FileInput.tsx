@@ -35,6 +35,7 @@ const FileInput: FC<Props> = ({
   fileSourceType,
   fileSectionType,
 }) => {
+  console.log(value);
   const currentId = useRef(value);
   const [_refresh, setRefresh] = useState(true);
   const [errorMsg, setErrorMsg] = useState("");
