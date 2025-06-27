@@ -52,7 +52,6 @@ const getLogo = async(branchId: string)=>{
    const {data} = await axios.get<string>(API_ROUTES.BRANCH.GET_LOGO, {
     params: { branchId: branchId },
   });
-  console.log(data)
   return data
 }
 const branchAPI = { get, getAll, getLogo, getSelect, changeRecord, remove, action };

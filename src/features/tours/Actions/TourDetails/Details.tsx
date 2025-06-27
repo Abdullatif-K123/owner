@@ -7,7 +7,6 @@ import useIsoToArabicDate from "../../../../hooks/useIsoToArabicDate";
 import CitiesList from "./CitiesList";
 
 const Details = ({ data }: { data: TourDetails }) => {
- 
   return (
     <Stack gap={3}>
       <Paper elevation={2} sx={{ p: 3, borderRadius: 3 }}>

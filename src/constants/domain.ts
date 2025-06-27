@@ -1,9 +1,11 @@
 // const DEVELOPMENT_BASE_URL = "https://api.dev.safra-binakra.com";
 // const DEVELOPMENT_API_BASE_URL = "https://api.dev.safra-binakra.com/api";
 
-const TEST_BASE_URL = "https://clickonline-sy.com";
+const TEST_BASE_URL = "https://click-online.runasp.net"
+// "https://clickonline-sy.com";
 // "https://api.test.safra-binakra.com";
-const TEST_API_BASE_URL = "https://clickonline-sy.com/api";
+const TEST_API_BASE_URL = "https://click-online.runasp.net/api"
+// "https://clickonline-sy.com/api";
 // "https://api.test.safra-binakra.com/api";
 
 // const PRODUCTION_BASE_URL = `https://api.${window.location.host}`;

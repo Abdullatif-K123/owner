@@ -27,7 +27,7 @@ const CompanyAccountingTable = () => {
   console.log(isOnline);
   const infiniteQuery = isOnline
     ? companyAccountingQueries.useInfiniteQueryCash(params, body)
-    : companyAccountingQueries.useInfiniteQueryCash(params, body);
+    : companyAccountingQueries.useInfiniteQuery(params, body);
   const { data } = infiniteQuery;
   const tableHeaders = [
     "الرحلة",

@@ -13,10 +13,7 @@ import TableCell from "@mui/material/TableCell";
 import { CustomerRow } from "./CustomerRow";
 import { useReservationsContext } from "../context/ReservationsContext";
 import NoData from "@/components/feedback/NoData";
-// import PaginationTable from "@/components/tables/PaginationTable";
-// import usePageNumberSearchParam from "@/hooks/usePageNumberSearchParam";
-// import { getPage } from "@/utils/apiHelpers";
-// import { toursQueries } from "@/API/tour/queries";
+
 import Loading from "@/components/feedback/Loading";
 import RepeatELement from "@/components/layout/RepeatElement";
 import TableRowStriped from "@/components/tables/PaginationTable/TableRowStriped";
@@ -92,29 +89,6 @@ const ReservationsTable = () => {
       </Stack>
     </Paper>
   );
-  // return (
-  //   <PaginationTable
-  //     tableHead={
-  //       <TableHead>
-  //         <TableRow>
-  //           {[null, ...TabelHeaders].map((cellHeader) => (
-  //             <TableCell key={cellHeader}>{cellHeader}</TableCell>
-  //           ))}
-  //         </TableRow>
-  //       </TableHead>
-  //     }
-  //     skeleton={true}
-  //     cellCount={TabelHeaders.length + 1}
-  //     pageNumber={pageNumber}
-  //     infiniteQuery={reservationsQuery}
-  //   >
-  //     <TableBody>
-  //       {page.map((row) => (
-  //         <CustomerRow data={row} key={row.tourCustomerChairId} />
-  //       ))}
-  //     </TableBody>
-  //   </PaginationTable>
-  // );
 };
 
 export default ReservationsTable;

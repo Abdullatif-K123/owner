@@ -79,7 +79,6 @@ const ToursTable = () => {
 
     return finalFormattedDate.replace(",", "");
   }
-
   return (
     <>
       <PaginationTable
