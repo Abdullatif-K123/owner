@@ -23,7 +23,6 @@ type Step = {
 
 type Props = {
   step: Step;
-  mobileNumber: string;
   slideContainer: React.RefObject<HTMLDivElement>;
   onSuccess: (val: number) => void;
 };
@@ -38,7 +37,6 @@ const errorStyle = {
 const CreateAccount: FC<Props> = ({
   step,
   slideContainer,
-  mobileNumber,
   onSuccess,
 }: Props) => {
   const form = useForm<Createaccount1>({
@@ -51,7 +49,8 @@ const CreateAccount: FC<Props> = ({
   const snackBar = useAxiosErrorSnackbar();
 
   const onSubmit: SubmitHandler<any> = async (body: Createaccount1) => {
-    body.mobileNumber = mobileNumber;
+    // body.mobileNumber = mobileNumber;
+    console.log("body But in componenet", body);
     mutation.mutate(body, {
       onSuccess: (val: any) => onSuccess(val),
       onError: (err) => snackBar(err),
@@ -118,9 +117,9 @@ const CreateAccount: FC<Props> = ({
                 {errors.lastName?.message}
               </Typography>
 
-              <Typography sx={errorStyle} component="p" variant="body2">
+              {/* <Typography sx={errorStyle} component="p" variant="body2">
                 {errors.mobileNumber?.message}
-              </Typography>
+              </Typography> */}
               <Controller
                 name="gender"
                 control={control}

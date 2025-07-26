@@ -23,7 +23,7 @@ const CityAutocomplete = ({ countryId, ...props }: Props) => {
       isOptionEqualToValue={(option, value) => option.id === value.id}
       {...props}
       loading={isLoading}
-      options={data ?? []}
+      options={data?.data ?? []}
       getOptionLabel={(option) => option.name}
       renderOption={(props, option) => (
         <li {...props} key={option.id}>

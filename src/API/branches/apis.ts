@@ -44,16 +44,27 @@ const remove = async (branchId: string) => {
   await axios.delete(API_ROUTES.BRANCH.REMOVE, { params: { branchId } });
 };
 
-const action = async (body: AddBranchType) => { 
+const action = async (body: AddBranchType) => {
+  // @ts-ignore
+  const idForLogo = body.logoId?.fileId as string;
+  body = { ...body, logoId: idForLogo };
   const { data } = await axios.post(`${API_ROUTES.BRANCH.ACTION}`, body);
   return data;
 };
-const getLogo = async(branchId: string)=>{ 
-   const {data} = await axios.get<string>(API_ROUTES.BRANCH.GET_LOGO, {
+const getLogo = async (branchId: string) => {
+  const { data } = await axios.get<string>(API_ROUTES.BRANCH.GET_LOGO, {
     params: { branchId: branchId },
   });
-  return data
-}
-const branchAPI = { get, getAll, getLogo, getSelect, changeRecord, remove, action };
+  return data;
+};
+const branchAPI = {
+  get,
+  getAll,
+  getLogo,
+  getSelect,
+  changeRecord,
+  remove,
+  action,
+};
 
 export default branchAPI;

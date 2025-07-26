@@ -273,7 +273,8 @@ const AddBusses: FC<Props> = ({ setAddOpen, addOpen }) => {
                       label="صورة الحافلة"
                       styling={{ mr: 0 }}
                       value={value}
-                      onChange={onChange}
+                      //@ts-ignore
+                      onChange={(fileObj) => onChange(fileObj?.fileId ?? "")}
                       deletedIds={deletedIds}
                       setDeletedIds={(val) => {
                         setValue("fileToRemoveIds", val);
@@ -303,7 +304,8 @@ const AddBusses: FC<Props> = ({ setAddOpen, addOpen }) => {
                       label="صورة النمرة"
                       styling={{ ml: 0 }}
                       value={value}
-                      onChange={onChange}
+                      //@ts-ignore
+                      onChange={(fileObj) => onChange(fileObj?.fileId ?? "")}
                       deletedIds={deletedIds}
                       setDeletedIds={(val) => {
                         setValue("fileToRemoveIds", val);

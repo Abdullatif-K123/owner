@@ -12,13 +12,10 @@ import API_ROUTES from "../../constants/apiRoutes";
 export const API = {
   registerMobileNumber: async (body: RegisterationPhoneNumber) => {
     // TODO: what to do with this
-    const encrypted = encryptor(body.mobileNumber);
-    if (!encrypted) throw new Error("Encryption failed!!");
-    body.mobileNumber = encrypted ? encrypted : "";
 
     const finalBody = {
       ...body,
-      dialCode: "+963",
+      dialCode: "963",
       userKind: 1,
     };
 
@@ -29,12 +26,13 @@ export const API = {
     return data;
   },
   verification: async (body: RegisterVerificationBody) => {
-    const encrypted = encryptor(`+963${body.mobileNumber}`);
-    if (!encrypted) throw new Error("Encryption failed!!");
+    // const encrypted = encryptor(`+963${body.mobileNumber}`);
+    // if (!encrypted) throw new Error("Encryption failed!!");
 
     const finalBody = {
       ...body,
-      mobileNumber: encrypted,
+      dialCode: "963",
+      // mobileNumber: encrypted,
     };
 
     const { data } = await axios.post<RegisterVerificationBody>(
@@ -42,23 +40,20 @@ export const API = {
       finalBody
     );
 
+    console.log("data createAccount1", data);
     return data;
   },
 
   createAccount1: async (body: Createaccount1) => {
-    const encrypted = encryptor(`+963${body.mobileNumber}`);
-    if (!encrypted) throw new Error("Encryption failed!!");
-
     const finalBody = {
       ...body,
-      mobileNumber: encrypted,
+      // mobileNumber: `0${body.mobileNumber}`,
     };
 
     const { data } = await axios.post<RegisterVerificationBody>(
       `${API_ROUTES.OWNER.FIRST_STEP_REGISTRATION}`,
       finalBody
     );
-
     return data;
   },
 

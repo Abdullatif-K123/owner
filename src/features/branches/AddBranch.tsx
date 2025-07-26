@@ -104,7 +104,7 @@ const AddBranch: FC<Props> = ({ addOpen, setAddOpen }) => {
   const [isEdit, setIsEdit] = useState(false);
   useEffect(() => {
     const data = getQuery ? getQuery.data ?? null : null;
-    console.log(data);
+
     if (data !== undefined && data !== null && !isEdit) {
       setIsEdit(true);
 
@@ -121,6 +121,7 @@ const AddBranch: FC<Props> = ({ addOpen, setAddOpen }) => {
 
   const { data: citiesData, status: cityStatus } = queries.useCity();
   const cities = cityStatus === "success" ? citiesData : citiesDefault;
+  console.log("cities", cities);
 
   const { status: regionStatus, data: regionsData } = queries.useRegion(
     watch("cityId")
@@ -290,7 +291,7 @@ const AddBranch: FC<Props> = ({ addOpen, setAddOpen }) => {
                       control={control}
                       render={({ field: { onChange, value } }) => (
                         <DropDownInput
-                          data={cities ? cities : [{ name: "", id: "" }]}
+                          data={cities ? cities.data : [{ name: "", id: "" }]}
                           label="المدينة"
                           onChange={onChange}
                           value={value}

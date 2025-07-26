@@ -3,7 +3,7 @@ import { UserKind } from "../constants/enums";
 export type JWTPayload = {
   UserKind: UserKind;
   Amir: "NoAmir" | "Amir";
-  'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name': string
+  "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name": string;
 };
 
 const decodeJWT = (jwt: string) => {

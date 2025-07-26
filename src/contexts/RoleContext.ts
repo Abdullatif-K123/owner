@@ -10,7 +10,7 @@ type RoleContextValue = {
 
 const RoleContext = createContext<RoleContextValue>({
   isStaff: false,
-  isOwner: false,
+  isOwner: true,
   isManager: false,
   tokenPayload: null,
 });

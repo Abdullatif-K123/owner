@@ -46,7 +46,7 @@ const BussesGrid = ({ setAddOpen, setDeleteOpen }: Props) => {
     fetchPreviousPage,
     pages: data?.pages,
   });
-  console.log(page);
+  console.log("page", page);
   const { remove, edit } = useEventSearchParams();
   return (
     <>

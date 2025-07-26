@@ -1,26 +1,32 @@
+import { UserKind } from "@/constants/enums";
+
 export type RegisterationPhoneNumber = {
   mobileNumber: string;
   isRegister: boolean;
 };
 
 export type RegisterVerificationBody = {
-  mobileNumber: string;
-  code: string;
+  phoneNumber: string;
+  verificationCode: string;
   fcmToken: string;
   isUpdated: boolean;
+  dialCode: string;
 };
 
 export type RegisterVerification = {
-  id: string;
-  token: string;
-  step: number;
+  data: {
+    id: string;
+    token: string;
+    step: number;
+    userkind: UserKind;
+  };
 };
 
 export type Createaccount1 = {
   firstName: string;
   lastName: string;
   gender?: number;
-  mobileNumber?: string | undefined;
+  // mobileNumber?: string | undefined;
 };
 
 export type Createaccount2 = {

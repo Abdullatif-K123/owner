@@ -23,7 +23,7 @@ const getAllModels = async (params: ModelGetAllParams) => {
 
 const uploadImage = async ({ formData, params }: uploadImageParams) => {
   const { data } = await axios.post(
-    `${API_BASE_URL}/File/addFile?fileSourceType=${params.fileSourceType}&fileSectionType=${params.fileSectionType}`,
+    `${API_BASE_URL}/File/upload?fileSourceType=${params.fileSourceType}&fileSectionType=${params.fileSectionType}`,
     formData,
     {
       headers: { "Content-Type": "multipart/form-data" },
@@ -49,7 +49,7 @@ const get = async (id: string) => {
 };
 
 const busAction = async (body: AddBussesType) => {
-  const { data } = await axios.post(
+  const { data } = await axios.put(
     `${API_BASE_URL}/${API_ROUTES.BUS.ACTION}`,
     body
   );

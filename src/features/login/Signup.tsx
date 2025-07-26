@@ -47,9 +47,11 @@ const SignupPage = () => {
   const handleVerificationSuccess = (data: any) => {
     const redirect = searchParams.get("redirect");
     if (!Object.hasOwn(data, "statusCode")) {
-      if (data.token) {
-        localStorage.setItem("token", data.token);
-        localStorage.setItem("id", data.id);
+      if (data.data.token) {
+        localStorage.setItem("token", data.data.token);
+        localStorage.setItem("userKind", data.data.userKind);
+        localStorage.setItem("id", data.data.id);
+        navigate("/", { replace: true });
       } else {
         const search = redirect ? `?redirect=${redirect}` : "";
         setStep({ num: 2, state: "next" });
@@ -114,7 +116,6 @@ const SignupPage = () => {
       ) : step.num === 2 ? (
         <CreateAccount
           step={step}
-          mobileNumber={mobileNumber}
           slideContainer={slideContainer}
           onSuccess={handleFirstRegisterSuccess}
         />
@@ -122,7 +123,6 @@ const SignupPage = () => {
         <CreateAccount2
           setStep={(val: Step) => setStep(val)}
           slideContainer={slideContainer}
-          mobileNumber={mobileNumber}
           onSuccess={handleSecondRegistration}
         />
       )}

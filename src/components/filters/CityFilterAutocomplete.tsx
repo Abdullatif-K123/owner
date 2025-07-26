@@ -13,6 +13,7 @@ const CityFilterAutocomplete: FC<Props> = ({ label }) => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const countryId = useObjectSearchParam<CountrySelect>("country")?.id ?? null;
+
   const prevCountryId = usePrevious(countryId);
   const city = useObjectSearchParam<CitySelect>("city");
 

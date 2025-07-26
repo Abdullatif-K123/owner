@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from "react";
+import React, { FC } from "react";
 import {
   Grid,
   TextField,
@@ -29,7 +29,6 @@ type Step = {
 type Props = {
   setStep: (val: Step) => void;
   slideContainer: React.RefObject<HTMLDivElement>;
-  mobileNumber: string;
   onSuccess: (data: any) => void;
 };
 
@@ -43,7 +42,6 @@ const errorStyle = {
 const CreateAccount2: FC<Props> = ({
   setStep,
   slideContainer,
-  mobileNumber,
   onSuccess,
 }: Props) => {
   const form = useForm<Createaccount2>({
@@ -51,12 +49,12 @@ const CreateAccount2: FC<Props> = ({
     defaultValues: createAccount2,
   });
 
-  const { register, control, formState, handleSubmit, setValue, watch } = form;
+  const { register, control, formState, handleSubmit, watch } = form;
   const { errors } = formState;
 
-  useEffect(() => {
-    setValue("ownerMobileNumber", mobileNumber);
-  }, [mobileNumber]);
+  // useEffect(() => {
+  //   setValue("ownerMobileNumber", mobileNumber);
+  // }, [mobileNumber]);
 
   const { data: citiesData, status: cityStatus } = queries.useCity();
   const cities = cityStatus === "success" ? citiesData : citiesDefault;

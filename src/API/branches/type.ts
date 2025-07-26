@@ -99,8 +99,8 @@ export type AddBranchType = {
   anotherLandLineNumber?: string;
   regionId: string;
   cityId: string;
-  logoId?: string; 
-  fileToRemoveIds?:  (string | null)[] | undefined;
+  logoId?: string;
+  fileToRemoveIds?: (string | null)[] | undefined;
   genderDiscrimination: boolean;
 };
 

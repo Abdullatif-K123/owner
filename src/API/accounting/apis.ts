@@ -15,7 +15,7 @@ import {
   AccountingAnalyticsParams,
   AccountingRecieveActionBody,
   DownloadGeneralStaff,
-  DownlaodTourFinance
+  DownlaodTourFinance,
 } from "./types";
 
 const getAll = async (params: AccountingParams) => {
@@ -130,9 +130,13 @@ const ownerFinishedAction = async (body: string[]) => {
 };
 
 const getDownloadSandookGeneral = async () => {
-  const res = await axios.put(API_ROUTES.ACCOUNTING.GET_GENERAL_SANDOOK_ASEXCEL, null, {
-    responseType: "blob",
-  });
+  const res = await axios.put(
+    API_ROUTES.ACCOUNTING.GET_GENERAL_SANDOOK_ASEXCEL,
+    null,
+    {
+      responseType: "blob",
+    }
+  );
 
   if (res !== undefined && res !== null) {
     if (res.headers !== null && res.headers !== undefined) {
@@ -145,28 +149,15 @@ const getDownloadSandookGeneral = async () => {
   }
   return res;
 };
-const getDownloadOnwerStaff =  async (param: string) => {
-    const res = await axios.put(API_ROUTES.ACCOUNTING.GET_TOUR_OWNER_STAFFS_ASEXCEL, null, {
+const getDownloadOnwerStaff = async (param: string) => {
+  const res = await axios.put(
+    API_ROUTES.ACCOUNTING.GET_TOUR_OWNER_STAFFS_ASEXCEL,
+    null,
+    {
       params: { tourId: param },
       responseType: "blob",
-    });
-  
-    if (res !== undefined && res !== null) {
-      if (res.headers !== null && res.headers !== undefined) {
-        console.log(
-          res.headers,
-          res.headers["content-disposition"],
-          res.headers["content-type"]
-        );
-      }
     }
-    return res;
-  };
-const getDownloadAccountingDetails = async (param: string) => {
-  const res = await axios.put(API_ROUTES.ACCOUNTING.GET_TOUR_SANDOOK_DETAILS_ASEXCEL, null, {
-    params: { tourId: param },
-    responseType: "blob",
-  });
+  );
 
   if (res !== undefined && res !== null) {
     if (res.headers !== null && res.headers !== undefined) {
@@ -179,11 +170,15 @@ const getDownloadAccountingDetails = async (param: string) => {
   }
   return res;
 };
-const getDownloadownerStaffDetails = async (params: DownloadGeneralStaff)=>{
-  const res = await axios.put(API_ROUTES.ACCOUNTING.GET_TOUR_OWNER_STAFF_DETAILS_ASEXCEL, null, {
-    params: { tourId: params.tourId, ownerStaffId: params.ownerStaffId },
-    responseType: "blob",
-  });
+const getDownloadAccountingDetails = async (param: string) => {
+  const res = await axios.put(
+    API_ROUTES.ACCOUNTING.GET_TOUR_SANDOOK_DETAILS_ASEXCEL,
+    null,
+    {
+      params: { tourId: param },
+      responseType: "blob",
+    }
+  );
 
   if (res !== undefined && res !== null) {
     if (res.headers !== null && res.headers !== undefined) {
@@ -195,12 +190,16 @@ const getDownloadownerStaffDetails = async (params: DownloadGeneralStaff)=>{
     }
   }
   return res;
-}
-const getDownloadTourFinance = async (params: DownlaodTourFinance)=>{
-  const res = await axios.put(API_ROUTES.ACCOUNTING.GET_TOUR_FINANCE_ASEXCEL, null, {
-    params: { branchId: params.branchId, userId: params.userId },
-    responseType: "blob",
-  });
+};
+const getDownloadownerStaffDetails = async (params: DownloadGeneralStaff) => {
+  const res = await axios.put(
+    API_ROUTES.ACCOUNTING.GET_TOUR_OWNER_STAFF_DETAILS_ASEXCEL,
+    null,
+    {
+      params: { tourId: params.tourId, ownerStaffId: params.ownerStaffId },
+      responseType: "blob",
+    }
+  );
 
   if (res !== undefined && res !== null) {
     if (res.headers !== null && res.headers !== undefined) {
@@ -212,7 +211,28 @@ const getDownloadTourFinance = async (params: DownlaodTourFinance)=>{
     }
   }
   return res;
-}
+};
+const getDownloadTourFinance = async (params: DownlaodTourFinance) => {
+  const res = await axios.put(
+    API_ROUTES.ACCOUNTING.GET_TOUR_FINANCE_ASEXCEL,
+    null,
+    {
+      params: { branchId: params.branchId, userId: params.userId },
+      responseType: "blob",
+    }
+  );
+
+  if (res !== undefined && res !== null) {
+    if (res.headers !== null && res.headers !== undefined) {
+      console.log(
+        res.headers,
+        res.headers["content-disposition"],
+        res.headers["content-type"]
+      );
+    }
+  }
+  return res;
+};
 
 export const accountingAPI = {
   getAll,
@@ -235,5 +255,5 @@ export const accountingAPI = {
   getDownloadAccountingDetails,
   getDownloadOnwerStaff,
   getDownloadownerStaffDetails,
-  getDownloadTourFinance
+  getDownloadTourFinance,
 };

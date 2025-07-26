@@ -2,7 +2,7 @@ let API_ROUTES = {
   REGISTRATION: {
     root: "BasicRegistration",
     REGISTER: "RegisterMobileNumber",
-    VERIFICATION: "RegisterVerficationCode",
+    VERIFICATION: "RegisterVerificationCode",
     LOGOUT: "Logout",
     REMOVE_ACCOUNT: "DeleteAccount",
   },
@@ -54,7 +54,7 @@ let API_ROUTES = {
     REMOVE: "Remove",
     Downloadfile: "ExportClientsToExcel",
     ChangeTime: "ChangeTime",
-    ChangeBusName: "ChangeTime"
+    ChangeBusName: "ChangeTime",
   },
   VIRTUAL_TOUR: {
     root: "VirtualTour",
@@ -107,10 +107,10 @@ let API_ROUTES = {
     OWNER_RECIEVED_ACTION: "RecievedOwnerGeneralSandook",
     OWNER_FINISHED_ACTION: "FinishedOwnerGeneralSandook",
     GET_TOUR_SANDOOK_DETAILS_ASEXCEL: "GetTourSandookDetailsAsExcel",
-    GET_TOUR_OWNER_STAFF_DETAILS_ASEXCEL: "GetTourOwnerStaffDetailsAsExcel", 
-    GET_TOUR_OWNER_STAFFS_ASEXCEL: "GetTourOwnerStaffsAsExcel", 
-    GET_TOUR_FINANCE_ASEXCEL: "GetToursFinanceAsExcel", 
-    GET_GENERAL_SANDOOK_ASEXCEL: "GetGeneralSandookAsExcel"
+    GET_TOUR_OWNER_STAFF_DETAILS_ASEXCEL: "GetTourOwnerStaffDetailsAsExcel",
+    GET_TOUR_OWNER_STAFFS_ASEXCEL: "GetTourOwnerStaffsAsExcel",
+    GET_TOUR_FINANCE_ASEXCEL: "GetToursFinanceAsExcel",
+    GET_GENERAL_SANDOOK_ASEXCEL: "GetGeneralSandookAsExcel",
   },
   OwnerStaff: {
     root: "OwnerStaff",

@@ -25,14 +25,15 @@ const LoginPage = () => {
   const handleVerificationSuccess = (data: RegisterVerification) => {
     const redirect = searchParams.get("redirect");
     if (!Object.hasOwn(data, "statusCode")) {
-      if (data.token) {
-        localStorage.setItem("token", data.token);
-        localStorage.setItem("id", data.id);
+      if (data.data.token) {
+        localStorage.setItem("token", data.data.token);
+        localStorage.setItem("udserKind", data.data.userkind);
+        localStorage.setItem("id", data.data.id);
         navigate("/", { replace: true });
       } else {
         const search = redirect ? `?redirect=${redirect}` : "";
         navigate(`/signup${search}`, {
-          state: { mobileNumber, step: data.step },
+          state: { mobileNumber, step: data.data.step },
         });
       }
     }

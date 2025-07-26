@@ -48,7 +48,7 @@ const SecretCode: FC<Props> = ({
     "PushManager" in window;
 
   const onSubmit = async (body: RegisterVerificationBody) => {
-    body.mobileNumber = mobileNumber;
+    body.phoneNumber = mobileNumber;
     if (isSupported()) {
       if (Notification.permission === "granted") {
         const token = (await getFirebaseToken()) ?? "";
@@ -98,7 +98,7 @@ const SecretCode: FC<Props> = ({
           >
             <Controller
               control={control}
-              name="code"
+              name="verificationCode"
               render={({ field: { onChange } }) => (
                 <PinInput onChange={onChange} />
               )}

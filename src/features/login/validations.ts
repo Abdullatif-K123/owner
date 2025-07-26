@@ -25,9 +25,10 @@ export const registerVerificationSchema = yup.object().shape({
 });
 
 export const registerVerificationDefault: RegisterVerificationBody = {
-  mobileNumber: "",
-  code: "",
+  phoneNumber: "",
+  verificationCode: "",
   fcmToken: "",
+  dialCode: "",
   isUpdated: false,
 };
 
@@ -35,17 +36,16 @@ export const createAccount1Schema = yup.object().shape({
   firstName: yup.string().required("الحقل مطلوب"),
   lastName: yup.string().required("الحقل مطلوب"),
   gender: yup.number().required("الحقل مطلوب"),
-  mobileNumber: yup
-    .string()
-    .trim()
-    .matches(mobileNumberRegex, "يجب أن يكون رقم موبايل"),
+  // mobileNumber: yup
+  //   .string()
+  //   .trim()
+  //   .matches(mobileNumberRegex, "يجب أن يكون رقم موبايل"),
 });
 
 export const createAccount1: Createaccount1 = {
   firstName: "",
   lastName: "",
-  // gender: 0,
-  mobileNumber: "",
+  gender: 0,
 };
 
 export const createAccount2Schema = yup.object().shape({
