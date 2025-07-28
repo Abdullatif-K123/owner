@@ -21,7 +21,7 @@ const DropDownInput = ({
   error = false,
 }: Props) => {
   const getValue = () => {
-    let matched = data.find((item) => item.id === value);
+    let matched = data?.find((item) => item.id === value);
     let finalVal = matched === undefined ? "" : matched.id;
     return finalVal;
   };

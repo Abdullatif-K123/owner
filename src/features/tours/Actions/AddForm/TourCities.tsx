@@ -24,7 +24,7 @@ const TourCities = ({ onChange, value }: Props) => {
 
   const query = toursQueries.useCity();
 
-  const cities: cityObj[] = query?.data.data;
+  const cities: cityObj[] = query?.data?.data;
   const { isFetched } = query;
 
   const onCitiesChange = (val: TourCitiesObj[]) => {
